@@ -1,0 +1,20 @@
+.weather {
+  font-family: Arial, sans-serif;
+  text-align: left;
+  padding: 2.5rem;
+  background-color: #f0f0f0;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.weather h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.weather p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
