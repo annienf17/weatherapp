@@ -34,10 +34,16 @@ const WeatherComponent: React.FC = () => {
       <p>Wind Direction: {weather?.wind.deg}°</p>
       <p>Cloudiness: {weather?.clouds.all}%</p>
       <p>Visibility: {weather?.visibility} m</p>
-      <p>
-        Sunrise: {new Date(weather?.sys.sunrise * 1000).toLocaleTimeString()}
-      </p>
-      <p>Sunset: {new Date(weather?.sys.sunset * 1000).toLocaleTimeString()}</p>
+      {weather?.sys.sunrise && (
+        <p>
+          Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}
+        </p>
+      )}
+      {weather?.sys.sunset && (
+        <p>
+          Sunset: {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}
+        </p>
+      )}
     </div>
   );
 };
