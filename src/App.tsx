@@ -3,9 +3,11 @@ import WeatherComponent from "./components/WeatherComponent";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <WeatherComponent />
-    </div>
+    <>
+      <div className="app">
+        <WeatherComponent />
+      </div>
+    </>
   );
 };
 
