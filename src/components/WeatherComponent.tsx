@@ -2,13 +2,22 @@ import React, { useState, useEffect } from "react";
 import { getWeather } from "../services/weatherService";
 import styles from "../styles/WeatherComponent.module.css";
 import { WeatherData } from "../types";
+import {
+  FaTemperatureHigh,
+  FaCloud,
+  FaWind,
+  FaTint,
+  FaCompressArrowsAlt,
+  FaSun,
+  FaMoon,
+} from "react-icons/fa";
 
 const WeatherComponent: React.FC = () => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [isCelsius, setIsCelsius] = useState<boolean>(true);
-  const [city, setCity] = useState<string>("London");
+  const [city, setCity] = useState<string>("New York");
 
   useEffect(() => {
     setLoading(true);
@@ -53,7 +62,7 @@ const WeatherComponent: React.FC = () => {
       </select>
 
       <p>
-        Temperature:{" "}
+        <FaTemperatureHigh /> Temperature:{" "}
         {isCelsius
           ? `${Math.round(weather?.main.temp as number)}°C`
           : `${Math.round(
@@ -63,16 +72,30 @@ const WeatherComponent: React.FC = () => {
       <button onClick={toggleTemperatureUnit}>
         {isCelsius ? "Show in Fahrenheit" : "Show in Celsius"}
       </button>
-      <p>Conditions: {weather?.weather[0].description}</p>
-      <p>Humidity: {weather?.main.humidity}%</p>
-      <p>Pressure: {weather?.main.pressure} hPa</p>
-      <p>Wind Speed: {weather?.wind.speed} m/s</p>
-      <p>Wind Direction: {weather?.wind.deg}°</p>
-      <p>Cloudiness: {weather?.clouds.all}%</p>
-      <p>Visibility: {weather?.visibility} m</p>
+      <p>
+        <FaCloud /> Conditions: {weather?.weather[0].description}
+      </p>
+      <p>
+        <FaTint /> Humidity: {weather?.main.humidity}%
+      </p>
+      <p>
+        <FaCompressArrowsAlt /> Pressure: {weather?.main.pressure} hPa
+      </p>
+      <p>
+        <FaWind /> Wind Speed: {weather?.wind.speed} m/s
+      </p>
+      <p>
+        <FaWind /> Wind Direction: {weather?.wind.deg}°
+      </p>
+      <p>
+        <FaCloud /> Cloudiness: {weather?.clouds.all}%
+      </p>
+      <p>
+        <FaSun /> Visibility: {weather?.visibility} m
+      </p>
       {weather?.sys.sunrise && (
         <p>
-          Sunrise:{" "}
+          <FaSun /> Sunrise:{" "}
           {new Date(weather.sys.sunrise * 1000).toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",
@@ -81,7 +104,7 @@ const WeatherComponent: React.FC = () => {
       )}
       {weather?.sys.sunset && (
         <p>
-          Sunset:{" "}
+          <FaMoon /> Sunset:{" "}
           {new Date(weather.sys.sunset * 1000).toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",

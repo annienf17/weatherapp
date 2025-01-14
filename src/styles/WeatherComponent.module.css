@@ -2,8 +2,8 @@
   font-family: Arial, sans-serif;
   text-align: left;
   padding: 2.5rem;
-  background-color: #f0f0f0;
-  color: black;
+  background: linear-gradient(to bottom, rgb(4, 130, 240), rgb(1, 1, 137));
+  color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: auto;
@@ -17,4 +17,24 @@
 .weather p {
   font-size: 1rem;
   margin: 0.5rem 0;
+}
+
+.weather select {
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.weather button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.weather button:hover {
+  background-color: #0056b3;
 }
