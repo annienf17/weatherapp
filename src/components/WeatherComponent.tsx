@@ -40,16 +40,18 @@ const WeatherComponent: React.FC = () => {
 
   return (
     <div className={styles.weather}>
-      <h1>Weather in England</h1>
+      <h1>Weather in USA</h1>
+      <p>{weather?.date}</p>
       <label htmlFor="city">Choose a city: </label>
       <select id="city" value={city} onChange={handleCityChange}>
-        <option value="London">London</option>
-        <option value="Manchester">Manchester</option>
-        <option value="Birmingham">Birmingham</option>
-        <option value="Liverpool">Liverpool</option>
-        <option value="Leeds">Leeds</option>
+        <option value="New York">New York</option>
+        <option value="New Jersey">New Jersey</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Chicago">Chicago</option>
+        <option value="Houston">Houston</option>
+        <option value="Phoenix">Phoenix</option>
       </select>
-      <p>Date: {weather?.date}</p>
+
       <p>
         Temperature:{" "}
         {isCelsius
