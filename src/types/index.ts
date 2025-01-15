@@ -5,7 +5,6 @@ export interface WeatherData {
     humidity: number;
     pressure: number;
   };
-
   weather: {
     description: string;
   }[];
@@ -21,5 +20,19 @@ export interface WeatherData {
     sunrise: number;
     sunset: number;
   };
-  date: number;
+  date: string;
+}
+
+export interface ForecastData {
+  date: string;
+  temp: number;
+  description: string;
+  humidity: number;
+  pressure: number;
+  windSpeed: number;
+  windDirection: number;
+  cloudiness: number;
+  visibility: number;
+  sunrise: string;
+  sunset: string;
 }
